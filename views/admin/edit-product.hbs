@@ -1,0 +1,46 @@
+<!-- Edit Products Page Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5 mt-5">
+        <div class="row">
+
+            <div class="col-md-12">
+                <h2 class="text-center">Edit Product</h2>
+                <form action="/admin/edit-product/{{product._id}}" method="post" enctype="multipart/form-data">
+                    <label for="">Name</label>
+                    <input type="text" name="Name" class="form-control" value="{{product.Name}}">
+
+                    <label for="">Type</label>
+                    <input type="text" name="Type" class="form-control" value="{{product.Type}}">
+
+                    <label for="">Category</label>
+                    <input type="text" name="Category" class="form-control" value="{{product.Category}}">
+
+                    <label for="">Original Price</label>
+                    <input type="number" name="originalPrice" class="form-control" value="{{product.originalPrice}}">
+
+                    <label for="">Selling Price</label>
+                    <input type="number" name="Price" class="form-control" value="{{product.Price}}">
+
+                    <label for="">Model Number</label>
+                    <input type="text" name="modelNumber" class="form-control" value="{{product.modelNumber}}">
+
+                    <label for="">Model Name</label>
+                    <input type="text" name="modelName" class="form-control" value="{{product.modelName}}">
+
+                    <label for="">Color</label>
+                    <input type="text" name="Color" class="form-control" value="{{product.Color}}">
+
+                    <label for="">Description</label>
+                    <input type="text" name="Description" class="form-control" value="{{product.Description}}">
+
+                    <label for="">Image</label>
+                    <img src="/product-images/{{product._id}}.jpg" alt="" style="width: 100px; height: auto;" class="p-3" id="imgView">
+                    <input type="file" name="Image" id="Image" class="form-control" onchange="viewImg(event)">
+
+                    <div class="text-center"> <button style="width: 23%;" type="submit" href='' class="btn btn-success m-4" >Submit</button></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Edit Products Page End -->

@@ -1,0 +1,31 @@
+<!-- ordered Product page Start -->
+<div class="container-fluid py-5 mt-5">
+    <div class="container py-5 mt-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 700px;">
+            <h1 class="display-4 text-success">Your Ordered Products</h1>
+            <p>Browse through your selected items, meticulously curated to suit your preferences. From essentials to indulgences, each product promises quality and satisfaction.</p>
+        </div>
+        <div class="row g-4 mt-4">
+            {{#each orderProducts}}
+            <div class="col-lg-6 col-xl-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <img src="/product-images/{{this.product._id}}.jpg" class="img-fluid rounded-circle w-100" alt="">
+                        </div>
+                        <div class="col-6">
+                            <h5>{{this.product.Name}}</h5>
+                            <p>{{this.product.Type}}</p>
+                            <p>Quantity: {{this.quantity}}</p>
+                            <p></p>
+                            <h4 class="mb-3"> RS {{this.product.Price}}</h4>
+                            <button class="btn border border-secondary rounded-pill px-3 text-primary"> More Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<!-- ordered Product page End -->

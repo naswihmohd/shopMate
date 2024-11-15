@@ -1,0 +1,26 @@
+<!--login page start-->
+
+<div class="container mt-5 py-5">
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2 class="text-center m-5">Login</h2>
+            {{#if logErr}}
+            <p>{{this.logErr}}</p>
+            {{/if}}
+            <form action="/login" method="post">
+                <label for="">Email Address</label>
+                <input type="Email" name="Email" class="form-control" placeholder="Enter Your Email Address">
+
+                <label for="">Password</label>
+                <input type="Password" name="Password" class="form-control" placeholder="Type a Strog Password">
+
+                <a style="float: right; color: blue;" href="/signup" >Create New Account</a> <br>
+                <center>
+                    <button style="width: 20%;" type="sumbit" class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4 ">Submit</button>
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--login page End-->

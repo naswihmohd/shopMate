@@ -1,0 +1,27 @@
+<!-- Users Start -->
+<div class="container-fluid testimonial py-5 mt-5">
+    <div class="container py-5 mt-5">
+        <div class="testimonial-header text-center">
+            <h4 class="text-primary">Our ShopMate</h4>
+            <h1 class="display-5 mb-5 text-dark">All Users</h1>
+        </div>
+
+        {{#each user}}
+        <a href="/admin/user-profile/{{this._id}}">
+            <div class="card flex-row m-4"><img style="height: 150px;"
+                    class=" m-3 card-img-left example-card-img-responsive" src="/img/best-product-5.jpg" />
+                <div class="card-body">
+                    <h4 class="card-title h5 h4-sm">{{this.Name}}</h4>
+                    <p class="card-text">
+                        {{this.Address}} <br>
+                        {{this.Email}} <br>
+                        {{this.Mobile}}
+                    </p>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+
+    </div>
+</div>
+<!-- Users End -->

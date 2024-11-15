@@ -1,0 +1,46 @@
+
+<!-- Ordered Page Start -->
+
+<div class="container-fluid py-5 mt-5">
+    <h1 class="text-center text-success py-5 mt-5"><u><b>Ordered List</b></u></h1>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="table-success">
+                        <th scope="col" style="width: 15%;">Date</th>
+                        <th scope="col" style="width: 35%;">Delivery Details</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Payment</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">View Products</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each orderedList}}
+                    <tr class="text-dark">
+                        <td style="width: 15%;">{{this.Date}}</td>
+                        <td style="width: 35%;">{{this.deliveryDetails.firstName}} {{this.deliveryDetails.lastName}} <br>
+                            {{this.deliveryDetails.Address}} <br>
+                            {{this.deliveryDetails.Post}} (PO), {{this.deliveryDetails.Place}} <br>
+                            {{this.deliveryDetails.Pincode}} <br>
+                            PH: {{this.deliveryDetails.Mobile}}
+                        </td>
+                        <td style="width: 15%;">{{this.totalAmount}}</td>
+                        <td style="width: 12%;">{{this.paymentMethod}}</td>
+                        <td style="width: 12%;">{{this.status}}</td>
+                        <td>
+                        <a href="/ordered-products/{{this._id}}"
+                            class="btn btn-md rounded-circle bg-light border mt-4">
+                            <i class="bi bi-bag-check-fill display-5 text-success"></i>
+                        </a>
+                        </td>
+
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Ordered Page End -->

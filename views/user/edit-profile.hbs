@@ -1,0 +1,35 @@
+
+<!--Edit Profile Page start-->
+
+<div class="container mt-5 py-5">
+    <div class="row mt-5">
+        <div class="col md-12">
+            <h2 class="text-center m-3">Edit Your Profile</h2>
+            <form action="/edit-profile" method="post" enctype="multipart/form-data">
+                <label for="">Name</label>
+                <input type="text" name="Name" class="form-control" value="{{user.Name}}">
+
+                <label for="">Address</label>
+                <input type="text" name="Address" class="form-control" value="{{user.Address}}">
+
+                <label for="">Country</label>
+                <input type="text" name="Country" class="form-control" value="{{user.Country}}">
+
+                <label for="">Profession</label>
+                <input type="text" name="Profession" class="form-control" value="{{user.Profession}}">
+
+                <label for="">Mobile</label>
+                <input type="number" name="Mobile" class="form-control" value="{{user.Mobile}}">
+
+                <label for="">Photo</label>
+                    <img src="/user-images/{{user._id}}.jpg" alt="" style="width: 100px; height: auto;" class="p-3" id="imgView">
+                    <input type="file" name="Image" id="Image" class="form-control" onchange="viewImg(event)">
+
+                <button type="submit" class="w-100 btn form-control border-secondary py-3 bg-white text-primary mt-4 ">Confirm</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Edit Profile Page End-->

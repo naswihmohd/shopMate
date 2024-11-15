@@ -1,0 +1,57 @@
+<!-- products Page Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5 mt-5">
+        <h1 class="text-center  display-6 m-3"><b><u>ALL PRODUCTS</u></b></h1>
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Products</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">OG Price & Price</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each products}}
+                    <tr>
+                        <th scope="row">
+                            <div class="d-flex align-items-center">
+                                <img src="/product-images/{{this._id}}.jpg" class="img-fluid me-5 rounded-circle"
+                                    style="width: 80px; height: 65px;" alt="">
+                            </div>
+                        </th>
+                        <td>
+                            <p class="mb-0 mt-4">{{this.Name}}</p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4">{{this.Category}}</p>
+                        </td>
+                        <td>
+                            <p class="mb-0 mt-4"><del>{{this.originalPrice}}</del> <span
+                                    class="text-danger"><b>{{this.Price}}</b></span></p>
+                        </td>
+                        <td>
+                            <a href="/admin/edit-product/{{this._id}}" class="btn btn-md rounded-circle bg-light border mt-4">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/admin/delete-product/{{this._id}}"
+                                class="btn btn-md rounded-circle bg-light border mt-4"
+                                onclick=" return confirm('are you delete {{this.Name}} ?')">
+                                <i class="fa fa-times text-danger"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <a style="width: 100%;" class="w-100 btn form-control border-secondary py-3 bg-white text-primary mt-3 " href="admin/add-products">Add Products</a>
+    </div>
+</div>
+<!-- Products Page End -->

@@ -1,0 +1,35 @@
+<!--sign up page start-->
+
+<div class="container mt-5 py-5">
+    <div class="row mt-5">
+        <div class="col md-12">
+            <h2 class="text-center m-3">Signup</h2>
+            <form action="/signup" method="post" enctype="multipart/form-data">
+                <label for="">Name</label>
+                <input type="text" name="Name" class="form-control" placeholder="Type Your Full Name">
+            
+                <input type="text" name="Address" class="form-control" hidden>
+
+                <input type="text" name="Country" class="form-control" hidden>
+    
+                <input type="text" name="Profession" class="form-control" hidden>
+
+                <input type="number" name="Mobile" class="form-control" hidden>
+
+                <label for="">Email Address</label>
+                <input type="email" name="Email" class="form-control">
+
+                <label for="">Password</label>
+                <input type="password" name="Password" class="form-control" placeholder="Create a Strong password">
+
+                    <a style="float: right; color: blue;" href="/login">Already have an Account</a> <br>
+                <center>
+                    <button style="width: 20%;" type="sumbit" class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4 ms-4 ">Submit</button>
+                </center>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--sign up page end-->

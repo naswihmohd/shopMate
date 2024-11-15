@@ -1,0 +1,56 @@
+<!-- Ordered Page Start -->
+
+<div class="container-fluid py-5 mt-5">
+    <h1 class="text-center text-success py-5 mt-5"><u><b>All Orders</b></u></h1>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="table-success">
+                        <th scope="col" style="width: 15%;">Date</th>
+                        <th scope="col" style="width: 25%;">Delivery Details</th>
+                        <th scope="col" style="width: 25%;">Payment Details</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Products</th>
+                        <th scope="col">shipping</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each orders}}
+                    <tr class="text-dark">
+                        <td>{{this.Date}}</td>
+                        <td>{{this.deliveryDetails.firstName}} {{this.deliveryDetails.lastName}} <br>
+                            {{this.deliveryDetails.Address}} <br>
+                            {{this.deliveryDetails.Post}} (PO), {{this.deliveryDetails.Place}} <br>
+                            {{this.deliveryDetails.Pincode}} <br>
+                            PH: {{this.deliveryDetails.Mobile}}
+                        </td>
+                        <td><b> Amount </b> : {{this.totalAmount}}
+                            <br>
+                            <b> Payment Method </b> : {{this.paymentMethod}}
+                            <br>
+                            <b> Payment Status </b>: {{this.status}}
+                        </td>
+                        <td><a href="/admin/user-profile/{{this.userId}}"
+                                class="btn btn-md rounded-circle bg-light border mt-4">
+                                <i class="bi bi-person display-5 text-primary"></i>
+                            </a></td>
+                        <td><a href="/admin/view-order-products/{{this._id}}"
+                                class="btn btn-md rounded-circle bg-light border mt-4">
+                                <i class="bi bi-bag-check display-5 text-secondary"></i>
+                            </a></td>
+                        <td>
+                            <a href="/ordered-products/{{this._id}}"
+                                class="btn btn-md rounded-circle bg-light border mt-4">
+                                <i class="bi bi-bag-check-fill display-5 text-success"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Ordered Page End -->
